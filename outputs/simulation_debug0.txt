@@ -1,0 +1,514 @@
+=== GTU-C312 CPU Simulator ===
+Loading program from: os_program_fixed.txt
+Debug level: 0
+=====================================
+Parsing OS with threads...
+Loading program...
+  Data: mem[0] = 200
+  Data: mem[1] = 999
+  Data: mem[1600] = 64
+  Data: mem[1601] = 34
+  Data: mem[1602] = 25
+  Data: mem[1603] = 12
+  Data: mem[1604] = 22
+  Data: mem[1610] = 0
+  Data: mem[1611] = 0
+  Data: mem[1612] = 0
+  Data: mem[1000] = CPY
+  Data: mem[1001] = 1600
+  Data: mem[1002] = 1611
+  Data: mem[1003] = CPY
+  Data: mem[1004] = 1601
+  Data: mem[1005] = 1612
+  Data: mem[1006] = SUBI
+  Data: mem[1007] = 1611
+  Data: mem[1008] = 1612
+  Data: mem[1009] = CPY
+  Data: mem[1010] = 1600
+  Data: mem[1011] = 1610
+  Data: mem[1012] = CPY
+  Data: mem[1013] = 1601
+  Data: mem[1014] = 1600
+  Data: mem[1015] = CPY
+  Data: mem[1016] = 1610
+  Data: mem[1017] = 1601
+  Data: mem[1018] = CPY
+  Data: mem[1019] = 1601
+  Data: mem[1020] = 1611
+  Data: mem[1021] = CPY
+  Data: mem[1022] = 1602
+  Data: mem[1023] = 1612
+  Data: mem[1024] = SUBI
+  Data: mem[1025] = 1611
+  Data: mem[1026] = 1612
+  Data: mem[1027] = CPY
+  Data: mem[1028] = 1601
+  Data: mem[1029] = 1610
+  Data: mem[1030] = CPY
+  Data: mem[1031] = 1602
+  Data: mem[1032] = 1601
+  Data: mem[1033] = CPY
+  Data: mem[1034] = 1610
+  Data: mem[1035] = 1602
+  Data: mem[1036] = CPY
+  Data: mem[1037] = 1602
+  Data: mem[1038] = 1611
+  Data: mem[1039] = CPY
+  Data: mem[1040] = 1603
+  Data: mem[1041] = 1612
+  Data: mem[1042] = SUBI
+  Data: mem[1043] = 1611
+  Data: mem[1044] = 1612
+  Data: mem[1045] = CPY
+  Data: mem[1046] = 1602
+  Data: mem[1047] = 1610
+  Data: mem[1048] = CPY
+  Data: mem[1049] = 1603
+  Data: mem[1050] = 1602
+  Data: mem[1051] = CPY
+  Data: mem[1052] = 1610
+  Data: mem[1053] = 1603
+  Data: mem[1054] = CPY
+  Data: mem[1055] = 1603
+  Data: mem[1056] = 1611
+  Data: mem[1057] = CPY
+  Data: mem[1058] = 1604
+  Data: mem[1059] = 1612
+  Data: mem[1060] = SUBI
+  Data: mem[1061] = 1611
+  Data: mem[1062] = 1612
+  Data: mem[1063] = CPY
+  Data: mem[1064] = 1603
+  Data: mem[1065] = 1610
+  Data: mem[1066] = CPY
+  Data: mem[1067] = 1604
+  Data: mem[1068] = 1603
+  Data: mem[1069] = CPY
+  Data: mem[1070] = 1610
+  Data: mem[1071] = 1604
+  Data: mem[1072] = SYSCALL
+  Data: mem[1073] = YIELD
+  Data: mem[1074] = 1500
+  Data: mem[1075] = CPY
+  Data: mem[1076] = 1600
+  Data: mem[1077] = 1611
+  Data: mem[1078] = CPY
+  Data: mem[1079] = 1601
+  Data: mem[1080] = 1612
+  Data: mem[1081] = SUBI
+  Data: mem[1082] = 1611
+  Data: mem[1083] = 1612
+  Data: mem[1084] = CPY
+  Data: mem[1085] = 1600
+  Data: mem[1086] = 1610
+  Data: mem[1087] = CPY
+  Data: mem[1088] = 1601
+  Data: mem[1089] = 1600
+  Data: mem[1090] = CPY
+  Data: mem[1091] = 1610
+  Data: mem[1092] = 1601
+  Data: mem[1093] = CPY
+  Data: mem[1094] = 1601
+  Data: mem[1095] = 1611
+  Data: mem[1096] = CPY
+  Data: mem[1097] = 1602
+  Data: mem[1098] = 1612
+  Data: mem[1099] = SUBI
+  Data: mem[1100] = 1611
+  Data: mem[1101] = 1612
+  Data: mem[1102] = CPY
+  Data: mem[1103] = 1601
+  Data: mem[1104] = 1610
+  Data: mem[1105] = CPY
+  Data: mem[1106] = 1602
+  Data: mem[1107] = 1601
+  Data: mem[1108] = CPY
+  Data: mem[1109] = 1610
+  Data: mem[1110] = 1602
+  Data: mem[1111] = CPY
+  Data: mem[1112] = 1602
+  Data: mem[1113] = 1611
+  Data: mem[1114] = CPY
+  Data: mem[1115] = 1603
+  Data: mem[1116] = 1612
+  Data: mem[1117] = SUBI
+  Data: mem[1118] = 1611
+  Data: mem[1119] = 1612
+  Data: mem[1120] = CPY
+  Data: mem[1121] = 1602
+  Data: mem[1122] = 1610
+  Data: mem[1123] = CPY
+  Data: mem[1124] = 1603
+  Data: mem[1125] = 1602
+  Data: mem[1126] = CPY
+  Data: mem[1127] = 1610
+  Data: mem[1128] = 1603
+  Data: mem[1129] = SYSCALL
+  Data: mem[1130] = YIELD
+  Data: mem[1131] = 1500
+  Data: mem[1132] = CPY
+  Data: mem[1133] = 1600
+  Data: mem[1134] = 1611
+  Data: mem[1135] = CPY
+  Data: mem[1136] = 1601
+  Data: mem[1137] = 1612
+  Data: mem[1138] = SUBI
+  Data: mem[1139] = 1611
+  Data: mem[1140] = 1612
+  Data: mem[1141] = CPY
+  Data: mem[1142] = 1600
+  Data: mem[1143] = 1610
+  Data: mem[1144] = CPY
+  Data: mem[1145] = 1601
+  Data: mem[1146] = 1600
+  Data: mem[1147] = CPY
+  Data: mem[1148] = 1610
+  Data: mem[1149] = 1601
+  Data: mem[1150] = CPY
+  Data: mem[1151] = 1601
+  Data: mem[1152] = 1611
+  Data: mem[1153] = CPY
+  Data: mem[1154] = 1602
+  Data: mem[1155] = 1612
+  Data: mem[1156] = SUBI
+  Data: mem[1157] = 1611
+  Data: mem[1158] = 1612
+  Data: mem[1159] = CPY
+  Data: mem[1160] = 1601
+  Data: mem[1161] = 1610
+  Data: mem[1162] = CPY
+  Data: mem[1163] = 1602
+  Data: mem[1164] = 1601
+  Data: mem[1165] = CPY
+  Data: mem[1166] = 1610
+  Data: mem[1167] = 1602
+  Data: mem[1168] = SYSCALL
+  Data: mem[1169] = YIELD
+  Data: mem[1170] = 1500
+  Data: mem[1171] = CPY
+  Data: mem[1172] = 1600
+  Data: mem[1173] = 1611
+  Data: mem[1174] = CPY
+  Data: mem[1175] = 1601
+  Data: mem[1176] = 1612
+  Data: mem[1177] = SUBI
+  Data: mem[1178] = 1611
+  Data: mem[1179] = 1612
+  Data: mem[1180] = CPY
+  Data: mem[1181] = 1600
+  Data: mem[1182] = 1610
+  Data: mem[1183] = CPY
+  Data: mem[1184] = 1601
+  Data: mem[1185] = 1600
+  Data: mem[1186] = CPY
+  Data: mem[1187] = 1610
+  Data: mem[1188] = 1601
+  Data: mem[1189] = SYSCALL
+  Data: mem[1190] = YIELD
+  Data: mem[1191] = 1500
+  Data: mem[1192] = SYSCALL
+  Data: mem[1193] = PRN
+  Data: mem[1194] = 1600
+  Data: mem[1195] = SYSCALL
+  Data: mem[1196] = PRN
+  Data: mem[1197] = 1601
+  Data: mem[1198] = SYSCALL
+  Data: mem[1199] = PRN
+  Data: mem[1200] = 1602
+  Data: mem[1201] = SYSCALL
+  Data: mem[1202] = PRN
+  Data: mem[1203] = 1603
+  Data: mem[1204] = SYSCALL
+  Data: mem[1205] = PRN
+  Data: mem[1206] = 1604
+  Data: mem[1207] = SYSCALL
+  Data: mem[1208] = HLT_THREAD
+  Data: mem[1209] = 1500
+  Data: mem[2000] = SET
+  Data: mem[2001] = -1
+  Data: mem[2002] = 2091
+  Data: mem[2003] = CPY
+  Data: mem[2004] = 2080
+  Data: mem[2005] = 2092
+  Data: mem[2006] = SUBI
+  Data: mem[2007] = 2092
+  Data: mem[2008] = 2090
+  Data: mem[2009] = SET
+  Data: mem[2010] = 0
+  Data: mem[2011] = 2091
+  Data: mem[2012] = SYSCALL
+  Data: mem[2013] = PRN
+  Data: mem[2014] = 2090
+  Data: mem[2015] = SYSCALL
+  Data: mem[2016] = YIELD
+  Data: mem[2017] = 2500
+  Data: mem[2018] = CPY
+  Data: mem[2019] = 2081
+  Data: mem[2020] = 2092
+  Data: mem[2021] = SUBI
+  Data: mem[2022] = 2092
+  Data: mem[2023] = 2090
+  Data: mem[2024] = SET
+  Data: mem[2025] = 1
+  Data: mem[2026] = 2091
+  Data: mem[2027] = SYSCALL
+  Data: mem[2028] = YIELD
+  Data: mem[2029] = 2500
+  Data: mem[2030] = CPY
+  Data: mem[2031] = 2082
+  Data: mem[2032] = 2092
+  Data: mem[2033] = SUBI
+  Data: mem[2034] = 2092
+  Data: mem[2035] = 2090
+  Data: mem[2036] = SET
+  Data: mem[2037] = 2
+  Data: mem[2038] = 2091
+  Data: mem[2039] = SYSCALL
+  Data: mem[2040] = PRN
+  Data: mem[2041] = 2091
+  Data: mem[2042] = SYSCALL
+  Data: mem[2043] = HLT_THREAD
+  Data: mem[2080] = 64
+  Data: mem[2081] = 34
+  Data: mem[2082] = 25
+  Data: mem[2083] = 12
+  Data: mem[2084] = 22
+  Data: mem[2090] = 25
+  Data: mem[2091] = -1
+  Data: mem[2092] = 0
+  Data: mem[3000] = SET
+  Data: mem[3001] = 0
+  Data: mem[3002] = 3080
+  Data: mem[3003] = SET
+  Data: mem[3004] = 1
+  Data: mem[3005] = 3081
+  Data: mem[3006] = SYSCALL
+  Data: mem[3007] = PRN
+  Data: mem[3008] = 3080
+  Data: mem[3009] = SYSCALL
+  Data: mem[3010] = PRN
+  Data: mem[3011] = 3081
+  Data: mem[3012] = SET
+  Data: mem[3013] = 1
+  Data: mem[3014] = 3082
+  Data: mem[3015] = SYSCALL
+  Data: mem[3016] = PRN
+  Data: mem[3017] = 3082
+  Data: mem[3018] = SET
+  Data: mem[3019] = 2
+  Data: mem[3020] = 3083
+  Data: mem[3021] = SYSCALL
+  Data: mem[3022] = PRN
+  Data: mem[3023] = 3083
+  Data: mem[3024] = SET
+  Data: mem[3025] = 3
+  Data: mem[3026] = 3084
+  Data: mem[3027] = SYSCALL
+  Data: mem[3028] = PRN
+  Data: mem[3029] = 3084
+  Data: mem[3030] = SET
+  Data: mem[3031] = 5
+  Data: mem[3032] = 3085
+  Data: mem[3033] = SYSCALL
+  Data: mem[3034] = PRN
+  Data: mem[3035] = 3085
+  Data: mem[3036] = SET
+  Data: mem[3037] = 8
+  Data: mem[3038] = 3086
+  Data: mem[3039] = SYSCALL
+  Data: mem[3040] = PRN
+  Data: mem[3041] = 3086
+  Data: mem[3042] = SYSCALL
+  Data: mem[3043] = HLT_THREAD
+  Data: mem[3044] = 3500
+  Data: mem[3080] = 0
+  Data: mem[3081] = 1
+  Data: mem[3082] = 0
+  Data: mem[3083] = 0
+  Data: mem[3084] = 0
+  Data: mem[3085] = 0
+  Data: mem[3086] = 0
+  Data: mem[4000] = SET
+  Data: mem[4001] = 1
+  Data: mem[4002] = 4080
+  Data: mem[4003] = SYSCALL
+  Data: mem[4004] = PRN
+  Data: mem[4005] = 4080
+  Data: mem[4006] = ADD
+  Data: mem[4007] = 4080
+  Data: mem[4008] = 1
+  Data: mem[4009] = SYSCALL
+  Data: mem[4010] = YIELD
+  Data: mem[4011] = 4500
+  Data: mem[4012] = SYSCALL
+  Data: mem[4013] = PRN
+  Data: mem[4014] = 4080
+  Data: mem[4015] = ADD
+  Data: mem[4016] = 4080
+  Data: mem[4017] = 1
+  Data: mem[4018] = SYSCALL
+  Data: mem[4019] = YIELD
+  Data: mem[4020] = 4500
+  Data: mem[4021] = SYSCALL
+  Data: mem[4022] = PRN
+  Data: mem[4023] = 4080
+  Data: mem[4024] = ADD
+  Data: mem[4025] = 4080
+  Data: mem[4026] = 1
+  Data: mem[4027] = SYSCALL
+  Data: mem[4028] = YIELD
+  Data: mem[4029] = 4500
+  Data: mem[4030] = SYSCALL
+  Data: mem[4031] = PRN
+  Data: mem[4032] = 4080
+  Data: mem[4033] = ADD
+  Data: mem[4034] = 4080
+  Data: mem[4035] = 1
+  Data: mem[4036] = SYSCALL
+  Data: mem[4037] = YIELD
+  Data: mem[4038] = 4500
+  Data: mem[4039] = SYSCALL
+  Data: mem[4040] = PRN
+  Data: mem[4041] = 4080
+  Data: mem[4042] = SYSCALL
+  Data: mem[4043] = HLT_THREAD
+  Data: mem[4044] = 4500
+  Data: mem[4080] = 0
+Program loaded. Initial PC = 200
+Instructions mapped: 87
+
+=== INSTRUCTION MAP ===
+Instruction 0: mem[200] = SET
+Instruction 1: mem[203] = CPY
+Instruction 2: mem[206] = CPY
+Instruction 3: mem[209] = USER
+Instruction 4: mem[211] = CPY
+Instruction 5: mem[214] = SET
+Instruction 6: mem[217] = SUBI
+Instruction 7: mem[220] = JIF
+Instruction 8: mem[223] = HLT
+Instruction 9: mem[224] = CPY
+Instruction 10: mem[227] = SET
+Instruction 11: mem[230] = SUBI
+Instruction 12: mem[233] = JIF
+Instruction 13: mem[236] = SET
+Instruction 14: mem[239] = SUBI
+Instruction 15: mem[242] = JIF
+Instruction 16: mem[245] = SET
+Instruction 17: mem[248] = SUBI
+Instruction 18: mem[251] = JIF
+Instruction 19: mem[254] = SET
+Instruction 20: mem[257] = SUBI
+Instruction 21: mem[260] = JIF
+Instruction 22: mem[263] = SET
+Instruction 23: mem[266] = SUBI
+Instruction 24: mem[269] = JIF
+Instruction 25: mem[272] = SET
+Instruction 26: mem[275] = SUBI
+Instruction 27: mem[278] = JIF
+Instruction 28: mem[281] = SET
+Instruction 29: mem[284] = HLT
+Instruction 30: mem[285] = CPY
+Instruction 31: mem[288] = CPY
+Instruction 32: mem[291] = SET
+Instruction 33: mem[294] = CPY
+Instruction 34: mem[297] = CPY
+Instruction 35: mem[300] = SET
+Instruction 36: mem[303] = CPY
+Instruction 37: mem[306] = CPY
+Instruction 38: mem[309] = SET
+Instruction 39: mem[312] = CPY
+Instruction 40: mem[315] = CPY
+Instruction 41: mem[318] = SET
+Instruction 42: mem[321] = CPY
+Instruction 43: mem[324] = CPY
+Instruction 44: mem[327] = SET
+Instruction 45: mem[330] = CPY
+Instruction 46: mem[333] = CPY
+Instruction 47: mem[336] = SET
+Instruction 48: mem[339] = ADD
+Instruction 49: mem[342] = SET
+Instruction 50: mem[345] = SUBI
+Instruction 51: mem[348] = JIF
+Instruction 52: mem[351] = SET
+Instruction 53: mem[354] = SET
+Instruction 54: mem[357] = SUBI
+Instruction 55: mem[360] = JIF
+Instruction 56: mem[363] = SET
+Instruction 57: mem[366] = SUBI
+Instruction 58: mem[369] = JIF
+Instruction 59: mem[372] = SET
+Instruction 60: mem[375] = SUBI
+Instruction 61: mem[378] = JIF
+Instruction 62: mem[381] = SET
+Instruction 63: mem[384] = SUBI
+Instruction 64: mem[387] = JIF
+Instruction 65: mem[390] = SET
+Instruction 66: mem[393] = SUBI
+Instruction 67: mem[396] = JIF
+Instruction 68: mem[399] = SET
+Instruction 69: mem[402] = HLT
+Instruction 70: mem[403] = CPY
+Instruction 71: mem[406] = JIF
+Instruction 72: mem[409] = CPY
+Instruction 73: mem[412] = USER
+Instruction 74: mem[414] = CPY
+Instruction 75: mem[417] = JIF
+Instruction 76: mem[420] = CPY
+Instruction 77: mem[423] = USER
+Instruction 78: mem[425] = CPY
+Instruction 79: mem[428] = JIF
+Instruction 80: mem[431] = CPY
+Instruction 81: mem[434] = USER
+Instruction 82: mem[436] = CPY
+Instruction 83: mem[439] = JIF
+Instruction 84: mem[442] = CPY
+Instruction 85: mem[445] = USER
+Instruction 86: mem[447] = SET
+
+--- CPU RUNNING ---
+THREAD_2_OUTPUT: 39
+THREAD_3_OUTPUT: 0
+THREAD_4_OUTPUT: 1
+THREAD_3_OUTPUT: 1
+THREAD_3_OUTPUT: 1
+THREAD_4_OUTPUT: 2
+THREAD_2_OUTPUT: 2
+THREAD_3_OUTPUT: 2
+THREAD_1_OUTPUT: 22
+THREAD_3_OUTPUT: 3
+THREAD_4_OUTPUT: 3
+THREAD_1_OUTPUT: 12
+THREAD_3_OUTPUT: 5
+THREAD_1_OUTPUT: 25
+THREAD_3_OUTPUT: 8
+THREAD_4_OUTPUT: 4
+THREAD_1_OUTPUT: 34
+THREAD_1_OUTPUT: 64
+THREAD_4_OUTPUT: 5
+--- CPU HALTED or Max Cycles Reached ---
+Total cycles executed: 2213
+
+🎉 === SIMULATION RESULTS === 🎉
+Thread Execution Summary:
+TID | Status    | Instructions | Start Time | Result Location | Final Value
+----|-----------|--------------|------------|-----------------|------------
+  1 | TERM      |           70 | 0          |            1080 |        1612
+  2 | TERM      |           15 | 0          |            2080 |          64
+  3 | TERM      |           15 | 0          |            3080 |           0
+  4 | RDY       |           14 | 0          |            4080 |           5
+  5 | INACT     |            0 | N/A        |            5080 |           0
+  6 | INACT     |            0 | N/A        |            6080 |           0
+  7 | INACT     |            0 | N/A        |            7080 |           0
+  8 | INACT     |            0 | N/A        |            8080 |           0
+  9 | INACT     |            0 | N/A        |            9080 |           0
+ 10 | INACT     |            0 | N/A        |           10080 |           0
+
+Detailed Thread Results:
+Thread 1: Executed 70 instructions, Result = 1612
+Thread 2: Executed 15 instructions, Result = 64
+Thread 3: Executed 15 instructions, Result = 0
+Thread 4: Executed 14 instructions, Result = 5
+
+Total CPU cycles: 2213
+Active threads: 4

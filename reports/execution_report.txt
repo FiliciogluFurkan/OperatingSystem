@@ -1,0 +1,36 @@
+GTU-C312 Simulation Report
+=========================
+Generated on: Thu Jun  5 22:10:34 +03 2025
+
+Files Generated:
+===============
+total 460
+drwxrwxrwx 1 filicioglu filicioglu   4096 Jun  5 22:10 .
+drwxrwxrwx 1 filicioglu filicioglu   4096 Jun  5 21:47 ..
+-rwxrwxrwx 1 filicioglu filicioglu  13833 Jun  5 22:10 simulation_debug0.txt
+-rwxrwxrwx 1 filicioglu filicioglu 204130 Jun  5 22:10 simulation_debug1.txt
+-rwxrwxrwx 1 filicioglu filicioglu 249634 Jun  5 22:10 simulation_debug3.txt
+
+Debug Level 0 Summary:
+=====================
+----|-----------|--------------|------------|-----------------|------------
+  1 | TERM      |           70 | 0          |            1080 |        1612
+  2 | TERM      |           15 | 0          |            2080 |          64
+  3 | TERM      |           15 | 0          |            3080 |           0
+  4 | RDY       |           14 | 0          |            4080 |           5
+  5 | INACT     |            0 | N/A        |            5080 |           0
+  6 | INACT     |            0 | N/A        |            6080 |           0
+  7 | INACT     |            0 | N/A        |            7080 |           0
+  8 | INACT     |            0 | N/A        |            8080 |           0
+  9 | INACT     |            0 | N/A        |            9080 |           0
+ 10 | INACT     |            0 | N/A        |           10080 |           0
+
+Detailed Thread Results:
+Thread 1: Executed 70 instructions, Result = 1612
+Thread 2: Executed 15 instructions, Result = 64
+Thread 3: Executed 15 instructions, Result = 0
+Thread 4: Executed 14 instructions, Result = 5
+
+Total CPU cycles: 2213
+Active threads: 4
+

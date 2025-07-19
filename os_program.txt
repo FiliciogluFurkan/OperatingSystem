@@ -1,0 +1,625 @@
+Begin Data Section
+# CPU Registers
+0 200  # PC starts at OS instruction 0
+1 999  # SP starts at top of memory
+
+# Thread Management
+160 1   # Current running thread ID (1-10)
+170 0   # Temp variable
+
+# Thread PC Save Areas (10 threads)
+180 1000  # Thread 1 PC
+181 2000  # Thread 2 PC  
+182 3000  # Thread 3 PC
+183 4000  # Thread 4 PC
+184 0     # Thread 5 PC (inactive)
+185 0     # Thread 6 PC (inactive)
+186 0     # Thread 7 PC (inactive)
+187 0     # Thread 8 PC (inactive)
+188 0     # Thread 9 PC (inactive)
+189 0     # Thread 10 PC (inactive)
+
+# Thread SP Save Areas (10 threads)
+190 15999  # Thread 1 SP
+191 14999  # Thread 2 SP  
+192 13999  # Thread 3 SP
+193 12999  # Thread 4 SP
+194 11999  # Thread 5 SP
+195 10999  # Thread 6 SP
+196 9999   # Thread 7 SP
+197 8999   # Thread 8 SP
+198 7999   # Thread 9 SP
+199 6999   # Thread 10 SP
+
+# ===== THREAD TABLE (For Display/Debug Only) =====
+# Thread 1: [TID][STATE][PC][SP]...
+21 1 
+22 1 
+23 1000 
+24 15999 
+25 0 26 0 27 0 28 0 29 0 30 0
+
+# Thread 2: [TID][STATE][PC][SP]...
+41 2 
+42 1 
+43 2000 
+44 14999 
+45 0 46 0 47 0 48 0 49 0 50 0
+
+# Thread 3: [TID][STATE][PC][SP]...
+61 3 
+62 1 
+63 3000 
+64 13999 
+65 0 66 0 67 0 68 0 69 0 70 0
+
+# Thread 4: [TID][STATE][PC][SP]...
+81 4 
+82 1 
+83 4000 
+84 12999 
+85 0 86 0 87 0 88 0 89 0 90 0
+
+# Thread 5-10: [TID][STATE][PC][SP]...
+101 5 
+102 0 
+103 0 
+104 11999
+121 6
+122 0
+123 0
+124 10999
+141 7
+142 0
+143 0
+144 9999
+161 8
+162 0
+163 0
+164 8999
+221 9
+222 0
+223 0
+224 7999
+241 10
+242 0
+243 0
+244 6999
+
+# THREAD 1: BUBBLE SORT DATA
+1600 64     # Array[0] - [64, 34, 25, 12, 22]
+1601 34     # Array[1]
+1602 25     # Array[2]
+1603 12     # Array[3]
+1604 22     # Array[4]
+1610 0      # temp for swaps
+1611 0      # temp register 1
+1612 0      # temp register 2
+
+# THREAD 1: TAM BUBBLE SORT (4 Pass)
+# PASS 1: 4 karşılaştırma
+1000 CPY    # arr[0] vs arr[1]
+1001 1600
+1002 1611
+1003 CPY
+1004 1601
+1005 1612
+1006 SUBI
+1007 1611
+1008 1612
+1009 CPY    # Swap arr[0] <-> arr[1]
+1010 1600
+1011 1610
+1012 CPY
+1013 1601
+1014 1600
+1015 CPY
+1016 1610
+1017 1601
+
+# arr[1] vs arr[2]
+1018 CPY
+1019 1601
+1020 1611
+1021 CPY
+1022 1602
+1023 1612
+1024 SUBI
+1025 1611
+1026 1612
+1027 CPY    # Swap arr[1] <-> arr[2]
+1028 1601
+1029 1610
+1030 CPY
+1031 1602
+1032 1601
+1033 CPY
+1034 1610
+1035 1602
+
+# arr[2] vs arr[3]
+1036 CPY
+1037 1602
+1038 1611
+1039 CPY
+1040 1603
+1041 1612
+1042 SUBI
+1043 1611
+1044 1612
+1045 CPY    # Swap arr[2] <-> arr[3]
+1046 1602
+1047 1610
+1048 CPY
+1049 1603
+1050 1602
+1051 CPY
+1052 1610
+1053 1603
+
+# arr[3] vs arr[4]
+1054 CPY
+1055 1603
+1056 1611
+1057 CPY
+1058 1604
+1059 1612
+1060 SUBI
+1061 1611
+1062 1612
+1063 CPY    # Swap arr[3] <-> arr[4]
+1064 1603
+1065 1610
+1066 CPY
+1067 1604
+1068 1603
+1069 CPY
+1070 1610
+1071 1604
+
+1072 SYSCALL # YIELD after pass 1
+1073 YIELD
+1074 1500
+
+# PASS 2: 3 karşılaştırma
+# arr[0] vs arr[1]
+1075 CPY
+1076 1600
+1077 1611
+1078 CPY
+1079 1601
+1080 1612
+1081 SUBI
+1082 1611
+1083 1612
+1084 CPY    # Swap
+1085 1600
+1086 1610
+1087 CPY
+1088 1601
+1089 1600
+1090 CPY
+1091 1610
+1092 1601
+
+# arr[1] vs arr[2]
+1093 CPY
+1094 1601
+1095 1611
+1096 CPY
+1097 1602
+1098 1612
+1099 SUBI
+1100 1611
+1101 1612
+1102 CPY    # Swap
+1103 1601
+1104 1610
+1105 CPY
+1106 1602
+1107 1601
+1108 CPY
+1109 1610
+1110 1602
+
+# arr[2] vs arr[3]
+1111 CPY
+1112 1602
+1113 1611
+1114 CPY
+1115 1603
+1116 1612
+1117 SUBI
+1118 1611
+1119 1612
+1120 CPY    # Swap
+1121 1602
+1122 1610
+1123 CPY
+1124 1603
+1125 1602
+1126 CPY
+1127 1610
+1128 1603
+
+1129 SYSCALL # YIELD after pass 2
+1130 YIELD
+1131 1500
+
+# PASS 3: 2 karşılaştırma
+# arr[0] vs arr[1]
+1132 CPY
+1133 1600
+1134 1611
+1135 CPY
+1136 1601
+1137 1612
+1138 SUBI
+1139 1611
+1140 1612
+1141 CPY    # Swap
+1142 1600
+1143 1610
+1144 CPY
+1145 1601
+1146 1600
+1147 CPY
+1148 1610
+1149 1601
+
+# arr[1] vs arr[2]
+1150 CPY
+1151 1601
+1152 1611
+1153 CPY
+1154 1602
+1155 1612
+1156 SUBI
+1157 1611
+1158 1612
+1159 CPY    # Swap
+1160 1601
+1161 1610
+1162 CPY
+1163 1602
+1164 1601
+1165 CPY
+1166 1610
+1167 1602
+
+1168 SYSCALL # YIELD after pass 3
+1169 YIELD
+1170 1500
+
+# PASS 4: 1 karşılaştırma
+# arr[0] vs arr[1]
+1171 CPY
+1172 1600
+1173 1611
+1174 CPY
+1175 1601
+1176 1612
+1177 SUBI
+1178 1611
+1179 1612
+1180 CPY    # Swap
+1181 1600
+1182 1610
+1183 CPY
+1184 1601
+1185 1600
+1186 CPY
+1187 1610
+1188 1601
+
+1189 SYSCALL # YIELD after pass 4
+1190 YIELD
+1191 1500
+
+# Print sorted array
+1192 SYSCALL # Print arr[0]
+1193 PRN
+1194 1600
+1195 SYSCALL # Print arr[1]
+1196 PRN
+1197 1601
+1198 SYSCALL # Print arr[2]
+1199 PRN
+1200 1602
+1201 SYSCALL # Print arr[3]
+1202 PRN
+1203 1603
+1204 SYSCALL # Print arr[4]
+1205 PRN
+1206 1604
+
+1207 SYSCALL # Terminate thread
+1208 HLT_THREAD
+1209 1500
+
+# THREAD 2: LINEAR SEARCH - Her elementi sırayla kontrol et
+2000 SET    # result = -1 (başlangıçta bulunamadı)
+2001 -1
+2002 2091
+
+# Element 0 kontrolü: arr[0] == key?
+2003 CPY    # arr[0] değerini al
+2004 2080
+2005 2092
+2006 SUBI   # arr[0] - key
+2007 2092
+2008 2090
+# Eğer sonuç 0 ise bulundu!
+2009 SET    # result = 0 (index 0'da bulundu)
+2010 0
+2011 2091
+
+2012 SYSCALL # Print: "Searching 25 in array..."
+2013 PRN
+2014 2090
+
+2015 SYSCALL # YIELD
+2016 YIELD
+2017 2500
+
+# Element 1 kontrolü: arr[1] == key?
+2018 CPY    # arr[1] değerini al
+2019 2081
+2020 2092
+2021 SUBI   # arr[1] - key
+2022 2092
+2023 2090
+# Eğer sonuç 0 ise bulundu!
+2024 SET    # result = 1 (index 1'de bulundu)
+2025 1
+2026 2091
+
+2027 SYSCALL # YIELD
+2028 YIELD
+2029 2500
+
+# Element 2 kontrolü: arr[2] == key?
+2030 CPY    # arr[2] değerini al
+2031 2082
+2032 2092
+2033 SUBI   # arr[2] - key
+2034 2092
+2035 2090
+# Eğer sonuç 0 ise bulundu!
+2036 SET    # result = 2 (index 2'de bulundu) - BULACAK!
+2037 2
+2038 2091
+
+2039 SYSCALL # Print result
+2040 PRN
+2041 2091
+
+2042 SYSCALL # Terminate
+2043 HLT_THREAD
+
+# THREAD 2 Data 
+2080 64     # Array[0] - [64, 34, 25, 12, 22]
+2081 34     # Array[1] 
+2082 25     # Array[2] - Bu değeri arıyoruz!
+2083 12     # Array[3]
+2084 22     # Array[4]
+2090 25     # Search key (aranacak değer)
+2091 -1     # Result (bulunan index)
+2092 0      # Temp register
+
+
+# THREAD 3: Fibonacci
+3000 SET
+3001 0
+3002 3080
+3003 SET
+3004 1
+3005 3081
+3006 SYSCALL
+3007 PRN
+3008 3080
+3009 SYSCALL
+3010 PRN
+3011 3081
+3012 SET
+3013 1
+3014 3082
+3015 SYSCALL
+3016 PRN
+3017 3082
+3018 SET
+3019 2
+3020 3083
+3021 SYSCALL
+3022 PRN
+3023 3083
+3024 SET
+3025 3
+3026 3084
+3027 SYSCALL
+3028 PRN
+3029 3084
+3030 SET
+3031 5
+3032 3085
+3033 SYSCALL
+3034 PRN
+3035 3085
+3036 SET
+3037 8
+3038 3086
+3039 SYSCALL
+3040 PRN
+3041 3086
+3042 SYSCALL
+3043 HLT_THREAD
+3044 3500
+
+# THREAD 3 Data
+3080 0      # F(n-2)
+3081 1      # F(n-1)
+3082 0      # F(n)
+3083 0      # F(n+1)
+3084 0      # F(n+2)
+3085 0      # F(n+3)
+3086 0      # F(n+4)
+
+# THREAD 4: Counter
+4000 SET
+4001 1
+4002 4080
+4003 SYSCALL
+4004 PRN
+4005 4080
+4006 ADD
+4007 4080
+4008 1
+4009 SYSCALL
+4010 YIELD
+4011 4500
+4012 SYSCALL
+4013 PRN
+4014 4080
+4015 ADD
+4016 4080
+4017 1
+4018 SYSCALL
+4019 YIELD
+4020 4500
+4021 SYSCALL
+4022 PRN
+4023 4080
+4024 ADD
+4025 4080
+4026 1
+4027 SYSCALL
+4028 YIELD
+4029 4500
+4030 SYSCALL
+4031 PRN
+4032 4080
+4033 ADD
+4034 4080
+4035 1
+4036 SYSCALL
+4037 YIELD
+4038 4500
+4039 SYSCALL
+4040 PRN
+4041 4080
+4042 SYSCALL
+4043 HLT_THREAD
+4044 4500
+
+# THREAD 4 Data
+4080 0      # Counter value
+
+End Data Section
+
+Begin Instruction Section
+# === OS STARTUP ===
+0 SET 1 160       # Start with thread 1
+1 CPY 180 170     # Get thread 1 PC
+2 CPY 190 1       # Load thread 1's SP
+3 USER 170        # Switch to thread 1
+
+# === SYSCALL HANDLER ===
+4 CPY 4 170       # Copy syscall ID
+5 SET 3 4         # YIELD constant = 3
+6 SUBI 170 4      # Check if YIELD
+7 JIF 4 9         # If YIELD, go to context switch
+8 HLT             # Unknown syscall
+
+# === CONTEXT SAVE & SCHEDULER ===
+9 CPY 2 170       # Get return PC
+10 SET 1 4         # Check thread 1
+11 SUBI 160 4     # current - 1
+12 JIF 4 30       # If thread 1, save to 180
+13 SET 2 4        # Check thread 2
+14 SUBI 160 4     # current - 2  
+15 JIF 4 33       # If thread 2, save to 181
+16 SET 3 4        # Check thread 3
+17 SUBI 160 4     # current - 3
+18 JIF 4 36       # If thread 3, save to 182
+19 SET 4 4        # Check thread 4
+20 SUBI 160 4     # current - 4
+21 JIF 4 39       # If thread 4, save to 183
+22 SET 5 4        # Check thread 5
+23 SUBI 160 4     # current - 5
+24 JIF 4 42       # If thread 5, save to 184
+25 SET 6 4        # Check thread 6
+26 SUBI 160 4     # current - 6
+27 JIF 4 45       # If thread 6, save to 185
+28 SET 48 0       # Default: Jump to scheduler (for threads 7-10)
+29 HLT            # Fallback
+
+30 CPY 170 180    # Save thread 1 PC
+31 CPY 1 190      # Save thread 1 SP
+32 SET 48 0       # Jump to scheduler
+33 CPY 170 181    # Save thread 2 PC
+34 CPY 1 191      # Save thread 2 SP
+35 SET 48 0       # Jump to scheduler
+36 CPY 170 182    # Save thread 3 PC
+37 CPY 1 192      # Save thread 3 SP
+38 SET 48 0       # Jump to scheduler
+39 CPY 170 183    # Save thread 4 PC
+40 CPY 1 193      # Save thread 4 SP
+41 SET 48 0       # Jump to scheduler
+42 CPY 170 184    # Save thread 5 PC
+43 CPY 1 194      # Save thread 5 SP
+44 SET 48 0       # Jump to scheduler
+45 CPY 170 185    # Save thread 6 PC
+46 CPY 1 195      # Save thread 6 SP
+47 SET 48 0       # Jump to scheduler
+
+# === IMPROVED ROUND ROBIN SCHEDULER ===
+48 ADD 160 1      # current_thread++
+49 SET 10 170     # Max threads = 10
+50 SUBI 160 170   # current - 10
+51 JIF 170 53     # If current <= 10, continue
+52 SET 1 160      # Reset to thread 1
+
+# === IMPROVED DISPATCHER WITH TERMINATED THREAD SKIP ===
+53 SET 1 170      # Check thread 1
+54 SUBI 160 170   # current - 1
+55 JIF 170 70     # If thread 1, check if alive
+56 SET 2 170      # Check thread 2
+57 SUBI 160 170   # current - 2
+58 JIF 170 74     # If thread 2, check if alive
+59 SET 3 170      # Check thread 3
+60 SUBI 160 170   # current - 3
+61 JIF 170 78     # If thread 3, check if alive
+62 SET 4 170      # Check thread 4
+63 SUBI 160 170   # current - 4
+64 JIF 170 82     # If thread 4, check if alive
+65 SET 5 170      # Check thread 5
+66 SUBI 160 170   # current - 5
+67 JIF 170 86     # If thread 5, check if alive
+68 SET 48 0       # Default: jump back to scheduler (for threads 6-10)
+69 HLT            # Fallback
+
+# === THREAD ALIVE CHECKS AND LOADING ===
+70 CPY 180 170    # Thread 1: load PC
+71 JIF 170 48     # If PC=0 (terminated), skip to next thread
+72 CPY 190 1      # Thread 1: load SP
+73 USER 170       # Switch to thread 1
+
+74 CPY 181 170    # Thread 2: load PC  
+75 JIF 170 48     # If PC=0 (terminated), skip to next thread
+76 CPY 191 1      # Thread 2: load SP
+77 USER 170       # Switch to thread 2
+
+78 CPY 182 170    # Thread 3: load PC
+79 JIF 170 48     # If PC=0 (terminated), skip to next thread  
+80 CPY 192 1      # Thread 3: load SP
+81 USER 170       # Switch to thread 3
+
+82 CPY 183 170    # Thread 4: load PC
+83 JIF 170 48     # If PC=0 (terminated), skip to next thread
+84 CPY 193 1      # Thread 4: load SP  
+85 USER 170       # Switch to thread 4
+
+# Threads 5-10: since they have no code, just skip
+86 SET 48 0       # Jump back to scheduler
+
+End Instruction Section
